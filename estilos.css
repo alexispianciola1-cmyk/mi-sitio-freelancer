@@ -62,7 +62,7 @@ a:hover{
     background-color: var(--secundario);
 }
 .fondo{
-    background-image: url(macaw1.jpg);
+    background-image: url(macaw1.jpg); /*IMAGEN DE GUACAMAYO*/
     background-repeat: no-repeat; /*evita que se me duplique la imagen*/
     background-size: cover;
     height: 60rem;
