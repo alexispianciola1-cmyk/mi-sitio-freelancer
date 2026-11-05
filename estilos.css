@@ -1,0 +1,210 @@
+:root{/*el root sirve para crar variables y de esta forma poder actualizar los colores y fuentes más rápido*/
+    --primario:#0097a7;
+    --secundario:#ffc107;
+    --blanco:#fff;
+    --negro:#000;
+    --gris:#757575;
+
+    --fuentePrincipal:"Krub", sans-serif;
+}
+html{
+   /* background-color: chocolate;*/
+    font-size: 62.5%; /* Este valor sirve para convertir pixeles a rem, unidad que se adapta a los diferentes dispositivos (diseño responsivo)*/
+    box-sizing: border-box;
+}
+*,*:before, *:after{
+    box-sizing: inherit;
+}
+body{
+    font-size: 16px;
+    font-family: var(--fuentePrincipal);
+    background-image: linear-gradient(to bottom,var(--primario) 0%, var(--blanco) 100%);
+}
+h1,h2,h3{
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+}
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+    
+}
+h3{
+    font-size: 1.8rem;
+}
+/***************NAVEGACIÓN*********************/
+
+nav{ /*Acá modifico la barra*/
+    display: flex; /*FLEX permite distribuir el espacio de manera uniforme*/
+    flex-direction: column;
+    background-color: var(--secundario);
+    justify-content: space-around;  
+    text-align: center;
+}
+@media(min-width: 768px){
+    nav{
+        flex-direction: row; /*Menor a 768, muestra en filas*/
+    }
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1rem;
+}
+/*.parrafo1{
+    font-size: 3rem;
+    color: blue;
+}*/
+a:hover{
+    color: var(--negro);
+    background-color: var(--secundario);
+}
+.fondo{
+    background-image: url(../img/macaw1.jpg);
+    background-repeat: no-repeat; /*evita que se me duplique la imagen*/
+    background-size: cover;
+    height: 60rem;
+    background-position: right;
+    position: relative;
+}
+.contenido-sombra{ /*las clases se declaran con un punto al comienzo!!!*/
+    background-color: rgba(0, 0, 0, .5); /*PARA LOGRAR OPACIDAD*/
+    width: 100%;
+    height: 100%;   
+    position: absolute;
+    display: flex;
+    flex-direction: column; /*alinea en columna*/
+    align-items: center; /*alinea en formato vertical*/
+    justify-content: center; /*alinea en formato horizontal*/
+
+}
+.blanco{
+    color:var(--blanco);
+}
+/*BOTÓN*/
+.boton{
+    background-color: var(--secundario);
+    text-transform: uppercase; /*transforma el texto en mayúscula*/
+    padding: 1rem 5rem; /*tamaño del botón*/
+    border-radius: 10rem;
+    border:none;
+    font-weight: bold;
+    color: var(--blanco);
+}
+.contenedor{
+    background-color: var(--primario);
+    max-width: 60rem;
+    margin: 0 auto;
+    
+    
+
+}
+.sombra{
+    box-shadow: 10px 10px 5px 5px rgba(0,0,0,0.49);
+    -webkit-box-shadow: 10px 10px 5px 5px rgba(0,0,0,0.49);
+    -moz-box-shadow: 10px 10px 5px 5px rgba(0,0,0,0.49);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.servicio{
+    display: flex;
+    flex-direction: column;
+    
+}
+@media(min-width: 768px){
+    .servicios{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr); 
+        column-gap: 2rem;
+        
+        
+    }
+}
+.servicio .iconos{ /*ICONOS*/
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--secundario);
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.servicio p{ /*p representa al párrafo*/
+     line-height: 2;
+     text-align: center;
+}
+/*******FORMULARIO********/
+form{
+    background-color: var(--gris);
+    width: min(50rem, 90%);
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+fieldset{
+    border: none;
+}
+legend{
+    text-align: center;
+    font-size: 2rem; 
+    text-transform: uppercase; /*para volver todo MAYÚSCULA*/
+    color: var(--secundario);
+    font-weight: bold;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+}
+/******CAMPOS********/
+label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin: 1rem;
+    display: block;
+}
+.input-text{
+    border: none;
+    padding: 1.5rem;
+    width: 100%;
+    border-radius: .5rem;
+}
+textarea{
+    height: 15rem;
+    resize: none;
+}
+@media(min-width:768px){
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem; /*para separar columnas*/
+        grid-template-rows: auto auto 20rem; /*row=fila*/
+    }
+    .campo:nth-child(3){
+        grid-column: 1/3;
+
+    }
+    .campo:nth-child(4){
+        grid-column: 1/3;
+    }
+}
+/*****botón formulario******/
+.w-100{
+    width: 100%;
+    margin-top: 1rem; /*para que no toque la parte de arriba de "deje su mensaje"*/
+}
+@media(min-width: 768px){
+    .w-100{
+        width: auto;
+    }
+    .flex{
+        display: flex;
+    }
+    .alinear-derecha{
+        justify-content: flex-end;
+    }
+}
+footer{
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
